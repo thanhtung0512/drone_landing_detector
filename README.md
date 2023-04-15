@@ -64,7 +64,7 @@
         - The returned object is a 2-D array. The output depends on the size of the input. For example, with the default input size of 640, we get a 2D array of size 25200×6 (rows and columns). The rows represent the number of detections. So each time the network runs, it predicts 25200 bounding boxes. Every bounding box has a 1-D array of 6 entries that tells the quality of the detection. This information is enough to filter out the desired detections.
         
         
-        <img src="https://ibb.co/Bj6Y6WW"  style="height: 100px; width:100px;"/>
+        <blockquote class="imgur-embed-pub" lang="en" data-id="a/4AMf2Zj" data-context="false" ><a href="//imgur.com/a/4AMf2Zj"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
         
         - The first two places are normalized center coordinates of the detected bounding box. Then comes the normalized width and height. Index 4 has the confidence score that tells the probability of the detection being an object. last entry tell the class scores of ‘area’ object of our problem.
         - **A. Filter Good Detections given by YOLOv5 Models**
@@ -120,14 +120,14 @@
             - After filtering good detections, we are left with the desired bounding boxes. However, there can be multiple overlapping bounding boxes, which may look like the following.
             
           
-            <img src="https://ibb.co/WcZvwyQ"  style="height: 100px; width:100px;"/>
+            <blockquote class="imgur-embed-pub" lang="en" data-id="a/4AMf2Zj" data-context="false" ><a href="//imgur.com/a/4AMf2Zj"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
             
             
             
             - This is solved by performing Non-Maximum Suppression. The function **`NMSBoxes()`**takes a list of boxes, calculates **[IOU** (Intersection Over Union](https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/), and decides to keep boxes depending on the **`NMS_THRESHOLD`**. Curious about how it works? Check out [Non Maximum Suppression](https://learnopencv.com/non-maximum-suppression-theory-and-implementation-in-pytorch/) to know more. The result after using NMS Algorithm:
             
         
-            <img src="https://ibb.co/9Yq81WF"  style="height: 100px; width:100px;"/>
+            <blockquote class="imgur-embed-pub" lang="en" data-id="a/4AMf2Zj" data-context="false" ><a href="//imgur.com/a/4AMf2Zj"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
             
             
             ```python
