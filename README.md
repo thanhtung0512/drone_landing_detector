@@ -65,7 +65,7 @@
         
         
         <p align="center">
-<img src="https://imgur.com/QzwQ966">
+<img src="https://i.imgur.com/QzwQ966.png">
 </p>
         
         - The first two places are normalized center coordinates of the detected bounding box. Then comes the normalized width and height. Index 4 has the confidence score that tells the probability of the detection being an object. last entry tell the class scores of ‘area’ object of our problem.
