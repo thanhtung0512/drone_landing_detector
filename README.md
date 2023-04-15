@@ -64,9 +64,9 @@
         - The returned object is a 2-D array. The output depends on the size of the input. For example, with the default input size of 640, we get a 2D array of size 25200×6 (rows and columns). The rows represent the number of detections. So each time the network runs, it predicts 25200 bounding boxes. Every bounding box has a 1-D array of 6 entries that tells the quality of the detection. This information is enough to filter out the desired detections.
         
         
-        <p align="center">
+     
 <img src="https://i.imgur.com/QzwQ966.png">
-</p>
+      
         
         - The first two places are normalized center coordinates of the detected bounding box. Then comes the normalized width and height. Index 4 has the confidence score that tells the probability of the detection being an object. last entry tell the class scores of ‘area’ object of our problem.
         - **A. Filter Good Detections given by YOLOv5 Models**
@@ -122,19 +122,18 @@
             - After filtering good detections, we are left with the desired bounding boxes. However, there can be multiple overlapping bounding boxes, which may look like the following.
             
           
-            <p align="center">
-<img src="https://i.imgur.com/f7IefXX.png">
-</p>
+            
+            <img src="https://i.imgur.com/f7IefXX.png">
+           
             
             
             
             - This is solved by performing Non-Maximum Suppression. The function **`NMSBoxes()`**takes a list of boxes, calculates **[IOU** (Intersection Over Union](https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/), and decides to keep boxes depending on the **`NMS_THRESHOLD`**. Curious about how it works? Check out [Non Maximum Suppression](https://learnopencv.com/non-maximum-suppression-theory-and-implementation-in-pytorch/) to know more. The result after using NMS Algorithm:
             
         
-            <p align="center">
+           
 <img src="https://i.imgur.com/ueLfpXP.png">
-</p>
-            
+      
             
             ```python
             # Perform non maximum suppression to eliminate redundant, overlapping boxes with lower confidences.
