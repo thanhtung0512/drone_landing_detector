@@ -122,14 +122,18 @@
             - After filtering good detections, we are left with the desired bounding boxes. However, there can be multiple overlapping bounding boxes, which may look like the following.
             
           
-            <blockquote class="imgur-embed-pub" lang="en" data-id="a/4AMf2Zj" data-context="false" ><a href="//imgur.com/a/4AMf2Zj"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+            <p align="center">
+<img src="https://i.imgur.com/f7IefXX.png">
+</p>
             
             
             
             - This is solved by performing Non-Maximum Suppression. The function **`NMSBoxes()`**takes a list of boxes, calculates **[IOU** (Intersection Over Union](https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/), and decides to keep boxes depending on the **`NMS_THRESHOLD`**. Curious about how it works? Check out [Non Maximum Suppression](https://learnopencv.com/non-maximum-suppression-theory-and-implementation-in-pytorch/) to know more. The result after using NMS Algorithm:
             
         
-            <blockquote class="imgur-embed-pub" lang="en" data-id="a/4AMf2Zj" data-context="false" ><a href="//imgur.com/a/4AMf2Zj"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+            <p align="center">
+<img src="https://i.imgur.com/ueLfpXP.png">
+</p>
             
             
             ```python
