@@ -49,6 +49,7 @@ class LandingDetector:
 
         # Run the forward pass to get output of the output layers.
         outputs = net.forward(net.getUnconnectedOutLayersNames())
+        print(len(outputs[0][0][0]))
         return outputs
 
     def post_process(self, input_image, outputs):
@@ -69,11 +70,11 @@ class LandingDetector:
             confidence = row[4]
             # Discard bad detections and continue.
             if confidence >= self.CONFIDENCE_THRESHOLD:
-                classes_scores = row[5:]
+                classes_scores = row[5]
                 # Get the index of max class score.
-                class_id = np.argmax(classes_scores)
+                class_id = classes_scores
                 #  Continue if the class score is above threshold.
-                if (classes_scores[class_id] > self.SCORE_THRESHOLD):
+                if (class_id > self.SCORE_THRESHOLD):
                     confidences.append(confidence)
                     class_ids.append(class_id)
                     cx, cy, w, h = row[0], row[1], row[2], row[3]
