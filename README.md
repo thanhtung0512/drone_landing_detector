@@ -128,7 +128,7 @@
             
             
             
-            - This is solved by performing Non-Maximum Suppression. The function **`NMSBoxes()`**takes a list of boxes, calculates **[IOU** (Intersection Over Union](https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/), and decides to keep boxes depending on the **`NMS_THRESHOLD`**. Curious about how it works? Check out [Non Maximum Suppression](https://learnopencv.com/non-maximum-suppression-theory-and-implementation-in-pytorch/) to know more. The result after using NMS Algorithm:
+            - This is solved by performing Non-Maximum Suppression. The function **`NMSBoxes()`** takes a list of boxes, calculates **[IOU]** (Intersection Over Union](https://learnopencv.com/intersection-over-union-iou-in-object-detection-and-segmentation/), and decides to keep boxes depending on the **`NMS_THRESHOLD`**. Curious about how it works? Check out [Non Maximum Suppression](https://learnopencv.com/non-maximum-suppression-theory-and-implementation-in-pytorch/) to know more. The result after using NMS Algorithm:
             
         
            
