@@ -9,9 +9,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-from landing_detector import LandingDetector 
-
-
+from landing_detector import LandingDetector
 
 
 def read_label(label_file):
@@ -38,7 +36,7 @@ def iou_score(output, target):
 
 
 def calc_precision(iou, t):
-    return 1.0*len(iou[iou>t])/len(iou)
+    return 1.0*len(iou[iou > t])/len(iou)
 
 
 if __name__ == "__main__":
@@ -60,6 +58,7 @@ if __name__ == "__main__":
 
     start_time = time.time()
     total = 0
+    first = 0
     for filename in list_files:
         if not ('jpg' in filename or 'jpeg' in filename):
             continue
@@ -70,7 +69,13 @@ if __name__ == "__main__":
         print(img.shape)
 
         (output_x1, output_y1, output_x2, output_y2) = detector.detect(img)
-        print("Bounding box: ",output_x1, output_y1, output_x2, output_y2)
+        print("Bounding box: ", output_x1, output_y1, output_x2, output_y2)
+
+        img = cv2.rectangle(img, (output_x1, output_y1),
+                            (output_x2, output_y2), (255, 0, 0), 2)
+        cv2.imshow("IMG", img)
+        cv2.waitKey(0)
+
         iou.append(iou_score((output_x1, output_y1, output_x2, output_y2),
                    target))
 
@@ -81,6 +86,3 @@ if __name__ == "__main__":
     run_time = time.time() - start_time
     print("Map score: %.6f" % np.mean(map_scores))
     print("Run time: ", run_time)
-
-
-
