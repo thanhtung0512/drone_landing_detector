@@ -64,7 +64,9 @@
         - The returned object is a 2-D array. The output depends on the size of the input. For example, with the default input size of 640, we get a 2D array of size 25200×6 (rows and columns). The rows represent the number of detections. So each time the network runs, it predicts 25200 bounding boxes. Every bounding box has a 1-D array of 6 entries that tells the quality of the detection. This information is enough to filter out the desired detections.
         
         
-        <blockquote class="imgur-embed-pub" lang="en" data-id="a/4AMf2Zj" data-context="false" ><a href="//imgur.com/a/4AMf2Zj"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+        <p align="center">
+<img src="https://imgur.com/QzwQ966">
+</p>
         
         - The first two places are normalized center coordinates of the detected bounding box. Then comes the normalized width and height. Index 4 has the confidence score that tells the probability of the detection being an object. last entry tell the class scores of ‘area’ object of our problem.
         - **A. Filter Good Detections given by YOLOv5 Models**
