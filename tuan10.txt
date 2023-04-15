@@ -1,0 +1,11 @@
+implement landingDetector().
+phiên bản chạy trên CPU
+
+training bằng notebook -> model 
+flow chính có 2 phần:
+Training : train.py -> model weight nộp cùng file src
+landingDetector load model và chạy đoạn , mode
+model quá nặng thì không thể chạy được cpu
+
+
+fft độ phữc tạp trên ảnh N*N là O(N^2logN^2)
