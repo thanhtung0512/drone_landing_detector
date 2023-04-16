@@ -16,10 +16,10 @@
 2. Run main.py
 `python main.py`
 
-## Explain landing_detector’s implement
+## Explain landing_detector’s implementation
 
 - In this project, we used OpenCV DNN to load trained yolov5s model under .onnx version and use it to detect coordinate of the bounding box for drone’s landing area.
-- The following is the details steps for implementation of landing_detector.
+- The following is the details steps for implementation of landing_detector class.
     1. **DEFINE CONSTANTS**
         - **INPUT_WIDTH** and **INPUT_HEIGHT** are for the BLOB size. The **BLOB** 
         stands for Binary Large Object. It contains the data in readable raw format. The image must be converted to a blob so the network can process it. In our case, it is a 4D array object with the shape (1, 3, 640, 640)
