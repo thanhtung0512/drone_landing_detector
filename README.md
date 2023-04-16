@@ -155,7 +155,7 @@
             
         
 
-1. **C. Detect method**
+ **C. Detect method**
 
 - Finally, we load the model. Perform pre-processing and post-processing and get the coordinate of the bounding box.
 
