@@ -133,24 +133,34 @@
         
            
                 <img src="https://i.imgur.com/ueLfpXP.png">
+                
+             - Then, we get the coordinate of the bounding box as the result of this method.
       
             
             ```python
-            # Perform non maximum suppression to eliminate redundant, overlapping boxes with lower confidences.
-                  indices = cv2.dnn.NMSBoxes(boxes, confidences, CONFIDENCE_THRESHOLD, NMS_THRESHOLD)
-                  for i in indices:
-                        box = boxes[i]
-                        left = box[0]
-                        top = box[1]
-                        width = box[2]
-                        height = box[3]             
-                        # Draw bounding box.             
-                        cv2.rectangle(input_image, (left, top), (left + width, top + height), BLUE, 3*THICKNESS)
-                        # Class label.                      
-                        label = "{}:{:.2f}".format(classes[class_ids[i]], confidences[i])             
-                        # Draw label.             
-                        draw_label(input_image, label, left, top)
-                  return input_image
+            # x1, y1 = 0, 0
+            x2, y2 = 0, 0
+
+
+
+            # Remove Overlapping Boxes Predicted
+            for i in indices:
+                box = boxes[i]
+                left = box[0]
+                top = box[1]
+                width = box[2]
+                height = box[3]
+                # Draw bounding box.
+                x1 = left 
+                y1 = top 
+                x2 = (left + width) 
+                y2 = (top + height) 
+                cv2.rectangle(input_image, (left, top),
+                              (left + width, top + height), (255, 0, 0), 1)
+                # print("Output image shape ", input_image.shape)
+
+
+            return (x1, y1, x2, y2)
             ```
             
         
